@@ -1,0 +1,16 @@
+{% extends 'musicRecomender/base.html' %}
+
+{% block content %}
+    <form class="row g-3" method="post" action="{%url 'musicRecomender:recommend' %}">
+        {%csrf_token%}
+        <div class="col-md-6">
+        <label for="validationDefault03" class="form-label">What is your favorite song</label>
+        <input type="text" class="form-control" id="name" name="name" required/>
+        </div>
+        <div class="col-12">
+        <button class="btn btn-primary" type="submit">Submit form</button>
+        </div>
+    </form>
+    <p></p>
+    <a href="{% url  'musicRecomender:songlist'%}"><button type="button" class="btn btn-secondary" >View song list</button></a>
+{% endblock %}

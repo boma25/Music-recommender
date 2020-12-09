@@ -1,0 +1,16 @@
+{% extends 'musicRecomender/base.html' %}
+
+{% block content %}
+    <p><h2>these are the current list of songs in the database</h2></p>
+    
+    {% for items in data %}
+        <ul  class="list-group list-group-horizontal-xl">
+            <li class="list-group-item">{{items.Title}}</li>
+            <li class="list-group-item">BY</li>
+            <li class="list-group-item">{{items.Artist}}</li>
+            <li class="list-group-item">{{items.Genre}}</li>
+        </ul>
+    {% endfor %}
+    <p></p>
+    <a href="{% url  'musicRecomender:index'%}"><button type="button" class="btn btn-secondary" >Back</button></a>
+{% endblock %}

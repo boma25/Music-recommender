@@ -1,0 +1,13 @@
+{% extends 'musicRecomender/base.html' %}
+
+{% block content %}
+    <p><h2>{{message}}</h2></p>
+    
+    {% for items in data %}
+        <ul  class="list-group list-group-horizontal">
+            <li class="list-group-item">{{items}}</li>
+        </ul>
+    {% endfor %}
+    <p></p>
+    <a href="{% url  'musicRecomender:index'%}"><button type="button" class="btn btn-secondary" >Back</button></a>
+{% endblock %}
